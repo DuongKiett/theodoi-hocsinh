@@ -1,0 +1,24 @@
+632:04-13 15:40:27.034 14372 14418 I ReactNativeJS: Running "MyProject" with {"rootTag":1,"initialProps":{},"fabric":true}
+633:04-13 15:40:27.112 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'S' of undefined]
+634:04-13 15:40:27.113 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'default' of undefined]
+635:04-13 15:40:27.117 14372 14418 D CompatibilityChangeReporter: Compat change id reported: 289878283; UID 10193; state: ENABLED
+636:04-13 15:40:27.158 14372 14434 D TrafficStats: tagSocket(120) with statsTag=0xffffffff, statsUid=-1
+637:04-13 15:40:27.160 14372 14432 D TrafficStats: tagSocket(121) with statsTag=0xffffffff, statsUid=-1
+638:04-13 15:40:27.161 14372 14433 D TrafficStats: tagSocket(122) with statsTag=0xffffffff, statsUid=-1
+639:04-13 15:40:27.359 14372 14372 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Schedule
+640:04-13 15:40:27.360 14372 14372 W unknown:BridgelessReact: ReactHost{0}.attachSurface(surfaceId = 0)
+641:04-13 15:40:27.361 14372 14405 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+642:04-13 15:40:27.361 14372 14405 W unknown:BridgelessReact: ReactHost{0}.startSurface(surfaceId = 0): Execute
+643:04-13 15:40:27.390   570  1792 D CoreBackPreview: Window{cabef49 u0 com.myproject/com.myproject.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@168a98b, mPriority=0, mIsAnimationCallback=false}
+644:04-13 15:40:27.392 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'S' of undefined]
+645:04-13 15:40:27.393 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'default' of undefined]
+646:04-13 15:40:27.404 14372 14372 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.RootViewManager
+647:04-13 15:40:27.483 14372 14393 E OpenGLRenderer: Unable to match the desired swap behavior.
+648:04-13 15:40:27.592   570  1792 I ImeTracker: com.myproject:22cf259e: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+649:04-13 15:40:27.592   570  1792 I ImeTracker: com.myproject:22cf259e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+650:04-13 15:40:27.595  1501  1501 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227 
+651:04-13 15:40:27.597  1501  1501 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+652:04-13 15:40:27.598  1501  1501 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.myproject fieldId=0 fieldName=null extras=null}, false)
+653:04-13 15:40:27.598  1501  1501 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+654:04-13 15:40:27.599  1501  1501 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+655:04-13 15:40:27.981 14372 14436 D ProfileInstaller: Installing profile for com.myproject

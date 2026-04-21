@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "535731886515",
+    "firebase_url": "https://face-kltn-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "face-kltn",
+    "storage_bucket": "face-kltn.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535731886515:android:561b9da965bfdbb2eb13c6",
+        "android_client_info": {
+          "package_name": "com.myproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0fes1EytDHiqtAOV8jNU-oxHeOWUpNDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

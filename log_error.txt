@@ -1,0 +1,4 @@
+04-13 15:40:27.112 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'S' of undefined]
+04-13 15:40:27.113 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'default' of undefined]
+04-13 15:40:27.392 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'S' of undefined]
+04-13 15:40:27.393 14372 14418 E ReactNativeJS: [TypeError: Cannot read property 'default' of undefined]
