@@ -1,7 +1,11 @@
-Hệ thống chống bỏ quên học sinh trên xe buýt
-- App sử dụng Raspberry Pi + nhận diện khuôn mặt+mobile app
-- Tính năng:
-  + Nhận diện khuôn mặt học sinh
-  + Cảnh báo khi còn học sinh trên xe
-  + App theo dõi trạng thái IN/OUT
+Ứng dụng quản lý điểm danh học sinh trên xe buýt kết hợp Raspberry Pi4 nhận diện khuôn mặt 
+Tính năng:
+- Dành cho tài xế (Admin)
+  + Xem tổng quan học sinh trên xe theo thời gian thực
+  + Lịch sử lên/xuống xe
+  + Cảnh báo ngay khi còn sót học sinh trên xe
+- Dành cho phụ huynh
+  + Theo dõi trạng thái lên/xuống
+  + Xem lịch sử chi tiết ngày, giờ
+  + Thống kê số lượt lên/xuống xe
     
