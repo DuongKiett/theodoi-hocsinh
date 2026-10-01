@@ -7,17 +7,22 @@ import {
   SafeAreaView,
   StatusBar,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useRoute } from '@react-navigation/native';
 import database from '@react-native-firebase/database';
-
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
+type NavigationProp = StackNavigationProp<RootStackParamList, 'CheckInDetail'>;
 interface CheckIn {
   key: string;
   id: string;
   name: string;
   status: 'IN' | 'OUT';
   timestamp: string;
+  photo?: string; 
 }
 
 interface Student {
@@ -27,6 +32,7 @@ interface Student {
 }
 
 const ParentHomeScreen: React.FC = () => {
+  const navigation = useNavigation<NavigationProp>();
   const route = useRoute<any>();
   const studentId: string = route.params?.studentId || '';
   const studentName: string = route.params?.studentName || '';
@@ -58,6 +64,7 @@ const ParentHomeScreen: React.FC = () => {
             name: val.name,
             status: val.status,
             timestamp: val.timestamp,
+            photo: val.photo || null,
           }))
           // Chỉ lấy checkin của học sinh này
           .filter(item => item.id === studentId)
@@ -97,7 +104,20 @@ const ParentHomeScreen: React.FC = () => {
   const renderItem = ({ item }: { item: CheckIn }) => {
     const isIn = item.status === 'IN';
     return (
-      <View style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        activeOpacity={0.7}
+        onPress={() =>
+          navigation.navigate('CheckInDetail', {
+            key: item.key,
+            id: item.id,
+            name: item.name,
+            status: item.status,
+            timestamp: item.timestamp,
+            photo: item.photo,
+          })
+        }
+      >
         <View
           style={[
             styles.statusDot,
@@ -117,7 +137,7 @@ const ParentHomeScreen: React.FC = () => {
             {item.status}
           </Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 

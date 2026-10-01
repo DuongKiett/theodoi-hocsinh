@@ -34,6 +34,17 @@ export type RootStackParamList = {
   Login: undefined;
   Main: undefined;
   Warning: { forgotten?: Student[] };
+  StrangerWarning: { forgotten?: Student[] };
   EndTrip: { forgotten: Student[]; allSafe: boolean; totalCount: number };
   ParentHome: { studentId: string; studentName: string }; // Thêm dòng này
+  CheckInDetail: {        // ← thêm đoạn này
+    key: string;
+    id: string;
+    name: string;
+    status: string;
+    timestamp: string;
+    photo?: string;
+  };
+   RegisterStudentHome: undefined;
+   
 };

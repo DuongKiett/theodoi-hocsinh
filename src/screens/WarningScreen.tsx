@@ -98,10 +98,6 @@ const WarningScreen: React.FC = () => {
             </Text>
           </View>
         </View>
-
-        <TouchableOpacity style={styles.btnGreen} onPress={handleResolved}>
-          <Text style={styles.btnText}>ĐÃ XỬ LÝ XONG</Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

@@ -32,33 +32,33 @@ const EndTripScreen: React.FC = () => {
           <View style={styles.heroIcon}>
             <Text style={{ fontSize: 28 }}>✅</Text>
           </View>
-          <Text style={styles.heroTitle}>Tat ca an toan!</Text>
-          <Text style={styles.heroSub}>{totalCount}/{totalCount} hoc sinh da xuong xe</Text>
+          <Text style={styles.heroTitle}>Tất cả an toàn!</Text>
+          <Text style={styles.heroSub}>{totalCount}/{totalCount} học sinh đã xuống xe</Text>
         </View>
 
         {/* Thông tin */}
         <View style={styles.infoCard}>
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Tong hoc sinh</Text>
+            <Text style={styles.infoLabel}>Tổng học sinh</Text>
             <Text style={styles.infoValue}>{totalCount}</Text>
           </View>
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Da xuong xe</Text>
+            <Text style={styles.infoLabel}>Đã xuống xe</Text>
             <Text style={[styles.infoValue, { color: '#3B6D11' }]}>{totalCount}</Text>
           </View>
           <View style={styles.infoRow}>
-            <Text style={styles.infoLabel}>Bo quen</Text>
+            <Text style={styles.infoLabel}>Bỏ quên</Text>
             <Text style={[styles.infoValue, { color: '#3B6D11' }]}>0</Text>
           </View>
           <View style={[styles.infoRow, { borderBottomWidth: 0 }]}>
-            <Text style={styles.infoLabel}>Thoi gian</Text>
+            <Text style={styles.infoLabel}>Thời gian</Text>
             <Text style={styles.infoValue}>{timeStr}</Text>
           </View>
         </View>
 
         {/* Nút xác nhận */}
         <TouchableOpacity style={styles.btnGreen} onPress={handleConfirm}>
-          <Text style={styles.btnText}>Xac nhan ket thuc chuyen</Text>
+          <Text style={styles.btnText}>Xác nhận kết thúc chuyến</Text>
         </TouchableOpacity>
 
       </View>

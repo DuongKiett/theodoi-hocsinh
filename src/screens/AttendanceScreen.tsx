@@ -8,9 +8,15 @@ import {
   StatusBar,
   TextInput,
   ActivityIndicator,
+  TouchableOpacity,
 } from 'react-native';
 import database from '@react-native-firebase/database';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
+
+type NavigationProp = StackNavigationProp<RootStackParamList, 'CheckInDetail'>;
 
 interface CheckIn {
   key: string;
@@ -18,9 +24,11 @@ interface CheckIn {
   name: string;
   status: 'IN' | 'OUT';
   timestamp: string;
+  photo?: string; 
 }
 
 const AttendanceScreen: React.FC = () => {
+  const navigation = useNavigation<NavigationProp>();
   const [checkins, setCheckins] = useState<CheckIn[]>([]);
   const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(true);
@@ -37,6 +45,7 @@ const AttendanceScreen: React.FC = () => {
             name: val.name,
             status: val.status,
             timestamp: val.timestamp,
+            photo: val.photo || null,
           }))
           .sort((a, b) => {
             // Sắp xếp mới nhất lên đầu theo timestamp
@@ -76,7 +85,20 @@ const AttendanceScreen: React.FC = () => {
       .toUpperCase();
 
     return (
-      <View style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        activeOpacity={0.7}
+        onPress={() =>
+          navigation.navigate('CheckInDetail', {
+            key: item.key,
+            id: item.id,
+            name: item.name,
+            status: item.status,
+            timestamp: item.timestamp,
+            photo: item.photo,
+          })
+        }
+      >
         <View
           style={[styles.avatar, isIn ? styles.avatarIn : styles.avatarOut]}
         >
@@ -100,7 +122,7 @@ const AttendanceScreen: React.FC = () => {
             {item.status}
           </Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
@@ -113,7 +135,7 @@ const AttendanceScreen: React.FC = () => {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Điểm Danh</Text>
+        <Text style={styles.headerTitle}>Lịch Sử</Text>
       </View>
 
       <View style={styles.searchWrapper}>

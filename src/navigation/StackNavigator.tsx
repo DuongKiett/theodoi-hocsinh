@@ -12,8 +12,10 @@ import HomeScreen from '../screens/HomeScreen';
 import AttendanceScreen from '../screens/AttendanceScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import WarningScreen from '../screens/WarningScreen';
+import StrangerWarningScreen from '../screens/StrangerWarningScreen';
 import EndTripScreen from '../screens/EndTripScreen';
-
+import CheckInDetailScreen from '../screens/CheckInDetailScreen';
+import RegisterStudent from '../screens/RegisterStudent'
 // Screen cho Phụ huynh
 import ParentHomeScreen from '../screens/ParentHomeScreen';
 
@@ -54,7 +56,7 @@ function AdminTabs() {
         name="Attendance"
         component={AttendanceScreen}
         options={{
-          tabBarLabel: 'Điểm danh',
+          tabBarLabel: 'Lịch sử',
           tabBarLabelStyle: {
             fontWeight: 'bold',
             fontSize: 13,
@@ -112,18 +114,33 @@ const StackNavigator = () => {
         }}
       />
       <Stack.Screen
+        name="StrangerWarning"
+        component={StrangerWarningScreen}
+        options={{
+          title: 'Cảnh báo người lạ',
+          headerTitleStyle: { fontWeight: 'bold', fontSize: 20 },
+        }}
+      />
+      <Stack.Screen
         name="EndTrip"
         component={EndTripScreen}
         options={{ title: 'Kết thúc chuyến' }}
       />
-
+      <Stack.Screen
+        name="CheckInDetail"
+        component={CheckInDetailScreen}
+        options={{
+          title: 'Chi Tiết Điểm Danh',
+          headerTitleStyle: { fontWeight: 'bold', fontSize: 18 },
+        }}
+      />
       {/* 3. Màn hình dành cho PHỤ HUYNH (Không có bottom tab của admin) */}
       <Stack.Screen
         name="ParentHome"
         component={ParentHomeScreen}
         options={({ navigation }) => ({
           title: 'THEO DÕI HỌC SINH',
-          
+
           headerTitleStyle: { fontWeight: 'bold' },
           // 👉 Thêm nút Logout ở bên phải Header
           headerRight: () => (
@@ -137,6 +154,12 @@ const StackNavigator = () => {
           headerLeft: () => null, // Chặn quay lại bằng nút back
         })}
       />
+      <Stack.Screen
+        name="RegisterStudentHome"
+        component={RegisterStudent}
+        options={{ title: 'Đăng ký thành viên' }}
+      />
+      
     </Stack.Navigator>
   );
 };
