@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: { alignItems: 'center', marginBottom: 40 },
-  logoText: { fontSize: 32, fontWeight: 'bold', color: '#A94442' },
+  logoText: { fontSize: 32, fontWeight: 'bold', color: '#207584' },
   subLogo: { color: '#666', marginTop: 5 },
   tabContainer: {
     flexDirection: 'row',
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   tab: { flex: 1, paddingVertical: 12, alignItems: 'center', borderRadius: 10 },
   activeTab: { backgroundColor: '#FFF' },
   tabText: { fontWeight: 'bold', color: '#888' },
-  activeTabText: { color: '#A94442' },
+  activeTabText: { color: '#207584' },
   card: {
     backgroundColor: '#FFF',
     padding: 20,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   btnLogin: {
-    backgroundColor: '#A94442',
+    backgroundColor: '#207584',
     padding: 18,
     borderRadius: 12,
     alignItems: 'center',

@@ -16,6 +16,10 @@ import StrangerWarningScreen from '../screens/StrangerWarningScreen';
 import EndTripScreen from '../screens/EndTripScreen';
 import CheckInDetailScreen from '../screens/CheckInDetailScreen';
 import RegisterStudent from '../screens/RegisterStudent'
+import ExportExcel from '../screens/ExportExcel'
+import StudentList from '../screens/StudentList'
+import ListIn from '../screens/ListIn'
+import ListOut from '../screens/ListOut'
 // Screen cho Phụ huynh
 import ParentHomeScreen from '../screens/ParentHomeScreen';
 
@@ -27,7 +31,7 @@ function AdminTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#842029',
+        tabBarActiveTintColor: '#207584',
         tabBarInactiveTintColor: 'black',
         headerShown: false,
         tabBarStyle: { height: 60, paddingBottom: 5 },
@@ -148,7 +152,7 @@ const StackNavigator = () => {
               onPress={() => navigation.replace('Login')}
               style={{ marginRight: 15 }}
             >
-              <MaterialCommunityIcons name="logout" size={24} color="#A94442" />
+              <MaterialCommunityIcons name="logout" size={24} color="#207584" />
             </TouchableOpacity>
           ),
           headerLeft: () => null, // Chặn quay lại bằng nút back
@@ -159,7 +163,26 @@ const StackNavigator = () => {
         component={RegisterStudent}
         options={{ title: 'Đăng ký thành viên' }}
       />
-      
+      <Stack.Screen
+        name="StudentList"
+        component={StudentList}
+        options={{ title: 'Danh sách học sinh đã đăng ký' }}
+      />
+      <Stack.Screen
+        name="ExportExcelScreen"
+        component={ExportExcel}
+        options={{ title: 'Xuất File  Excel' }}
+      />
+      <Stack.Screen
+        name="ListOut"
+        component={ListOut}
+        options={{ title: 'Danh sách học sinh ra' }}
+      />
+      <Stack.Screen
+        name="ListIn"
+        component={ListIn}
+        options={{ title: 'Danh sách học sinh vào' }}
+      />
     </Stack.Navigator>
   );
 };

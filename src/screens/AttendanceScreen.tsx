@@ -19,12 +19,15 @@ import { RootStackParamList } from '../types';
 type NavigationProp = StackNavigationProp<RootStackParamList, 'CheckInDetail'>;
 
 interface CheckIn {
-  key: string;
+ key: string;
   id: string;
   name: string;
   status: 'IN' | 'OUT';
   timestamp: string;
   photo?: string; 
+  date?: string; // Thêm trường date để lưu ngày tháng
+  stt?: number; // Thêm trường stt để lưu số thứ tự
+  parent_phone?: string; // Thêm trường parent_phone để lưu số điện thoại phụ huynh 
 }
 
 const AttendanceScreen: React.FC = () => {
@@ -169,6 +172,18 @@ const AttendanceScreen: React.FC = () => {
           showsVerticalScrollIndicator={false}
         />
       )}
+      <View style={styles.footer}>
+          <TouchableOpacity
+            style={[styles.endTripButton, { opacity: 0.7 }]}
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate('ExportExcelScreen')}
+           
+          >
+            
+              <Text style={styles.endTripText}>Xuất File Excel</Text>
+            
+          </TouchableOpacity>
+        </View>
     </SafeAreaView>
   );
 };
@@ -241,4 +256,28 @@ const styles = StyleSheet.create({
   badgeText: { fontSize: 11, fontWeight: 'bold' },
   textIn: { color: '#2E7D32' },
   textOut: { color: '#842029' },
+  footer: {
+    marginTop: 5,
+    paddingHorizontal: 20,
+    marginBottom: 10, // Tạo khoảng cách với cạnh dưới màn hình
+  },
+  endTripButton: {
+    backgroundColor: '#207584', // Màu xanh dương đồng bộ với Dashboard
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    borderRadius: 50, // Bo tròn cạnh (Capsule style)
+    elevation: 5,
+    shadowColor: '#42a96d',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+  },
+  endTripText: {
+    color: '#fff',
+    fontSize: 17,
+    fontWeight: 'bold',
+    marginLeft: 10,
+  },
 });

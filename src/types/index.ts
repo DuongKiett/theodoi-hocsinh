@@ -1,3 +1,5 @@
+import ExportExcel from "../screens/ExportExcel";
+
 export interface Student {
   id: string;
   name: string;
@@ -6,10 +8,15 @@ export interface Student {
 }
 
 export interface CheckIn {
+  key: string;
   id: string;
   name: string;
   status: 'IN' | 'OUT';
   timestamp: string;
+  photo?: string; 
+  date?: string; 
+  stt?: number; 
+  parent_phone?: string;
 }
 
 export type RootDrawerParamList = {
@@ -45,6 +52,9 @@ export type RootStackParamList = {
     timestamp: string;
     photo?: string;
   };
-   RegisterStudentHome: undefined;
-   
+  RegisterStudentHome: undefined;
+  ExportExcelScreen: undefined;
+  StudentList: undefined;
+  ListIn: undefined;
+  ListOut: undefined;
 };

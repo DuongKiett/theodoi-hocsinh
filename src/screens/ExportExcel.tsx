@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const RegisterStudent = () => {
+const ExportExcel = () => {
   return (
     
      <View style={styles.container}>
-      <Text style={styles.text}>Register Student Screen</Text>
+      <Text style={styles.text}>Export Excel Screen</Text>
     </View>
     
   );
@@ -17,6 +17,4 @@ const styles = StyleSheet.create({
 });
 
 // Bắt buộc phải có dòng này!
-
-
-export default RegisterStudent;
+export default ExportExcel;

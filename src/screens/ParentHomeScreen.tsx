@@ -215,7 +215,7 @@ const ParentHomeScreen: React.FC = () => {
 
       {loading ? (
         <View style={styles.center}>
-          <ActivityIndicator size="large" color="#A94442" />
+          <ActivityIndicator size="large" color="#207584" />
           <Text style={styles.centerText}>Đang tải dữ liệu...</Text>
         </View>
       ) : checkins.length === 0 ? (

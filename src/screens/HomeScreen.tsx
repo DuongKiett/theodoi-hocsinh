@@ -78,7 +78,7 @@ const HomeScreen: React.FC = () => {
             (a, b) =>
               new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
           )
-          .slice(0, 4);
+          .slice(0, 5); // Lấy 5 checkin gần nhất
         setRecent(list);
         // 2. Lọc và đếm số lượng người lạ mặt
         const unknownList = Object.values(data).filter(
@@ -161,22 +161,36 @@ const HomeScreen: React.FC = () => {
         {/* --- DASHBOARD --- */}
         {/* --- DASHBOARD --- */}
         <View style={styles.dashboard}>
-          <View style={styles.card}>
-            <Text style={[styles.cardNumber, { color: '#1E90FF' }]}>
-              {stats.inCount < 10 ? `0${stats.inCount}` : stats.inCount}
-            </Text>
-            <Text style={styles.cardLabel}>IN</Text>
-          </View>
-
-          <View style={styles.card}>
-            <Text style={[styles.cardNumber, { color: '#43A047' }]}>
-              {stats.outCount < 10 ? `0${stats.outCount}` : stats.outCount}
-            </Text>
-            <Text style={styles.cardLabel}>OUT</Text>
-          </View>
+          
           <TouchableOpacity
             activeOpacity={0.8}
-            style={[styles.card, { backgroundColor: '#FFEBEE' }]}
+            style={[styles.card]}
+            onPress={() => navigation.navigate('ListIn')}
+          >
+            <View style={{ alignItems: 'center' }}>
+              <Text style={[styles.cardNumber, { color: '#43a05f' }]}>
+                {stats.inCount < 10 ? `0${stats.inCount}` : stats.inCount}
+              </Text>
+              <Text style={styles.cardLabel}>IN</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.card, { backgroundColor: '#F8D7DA' }]}
+            onPress={() => navigation.navigate('ListOut')}
+          >
+            <View style={{ alignItems: 'center' }}>
+              <Text style={[styles.cardNumber, { color: '#B71C1C' }]}>
+                {stats.outCount < 10 ? `0${stats.outCount}` : stats.outCount}
+              </Text>
+              <Text style={styles.cardLabel}>OUT</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.card, { backgroundColor: '#F8D7DA' }]}
             onPress={() =>
               navigation.navigate('StrangerWarning', { forgotten: [] })
             }
@@ -213,42 +227,41 @@ const HomeScreen: React.FC = () => {
             <Text style={styles.functionArrow}>›</Text>
           </TouchableOpacity>
 
-          {/* XUẤT FILE EXCEL */}
+          {/* Danh sách học sinh */}
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.functionCard}
+            onPress={() => navigation.navigate('StudentList')}
           >
             <View style={[styles.functionIcon, { backgroundColor: '#E8F5E9' }]}>
               <Text style={styles.functionIconText}>↓</Text>
             </View>
 
             <View style={styles.functionInfo}>
-              <Text style={styles.functionTitle}>Xuất file Excel</Text>
+              <Text style={styles.functionTitle}>Danh sách học sinh</Text>
 
               <Text style={styles.functionDescription}>
-                Xuất danh sách học sinh
+                Xem danh sách học sinh
               </Text>
             </View>
 
             <Text style={styles.functionArrow}>›</Text>
           </TouchableOpacity>
         </View>
-        {/* --- Danh sách học sinh --- */}
+        {/* --- Danh sách học sinh --- 
         <View style={styles.footer}>
           <TouchableOpacity
             style={[styles.endTripButton, checking && { opacity: 0.7 }]}
             activeOpacity={0.8}
-            onPress={handleEndTrip}
-            disabled={checking}
+            onPress={() => navigation.navigate('StudentList')}
+           
           >
-            {checking ? (
-              <ActivityIndicator color="#fff" />
-            ) : (
+            
               <Text style={styles.endTripText}>Danh Sách Học Sinh </Text>
-            )}
+            
           </TouchableOpacity>
         </View>
-
+          */}
         {/* --- BOX ĐIỂM DANH GẦN NHẤT --- */}
         <View style={styles.attendanceSection}>
           <Text style={styles.sectionTitle}>ĐIỂM DANH GẦN NHẤT</Text>
@@ -346,14 +359,15 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   headerTitle: { fontSize: 20, fontWeight: 'bold', color: '#000' },
-  dashboard: { flexDirection: 'row', padding: 10, marginTop: 5 },
+  dashboard: { flexDirection: 'row', padding: 10, marginTop: 10 },
   card: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#E8F5E9',
     marginHorizontal: 5,
     paddingVertical: 15,
     borderRadius: 12,
     alignItems: 'center',
+    justifyContent: 'center',
     elevation: 3,
   },
   cardNumber: { fontSize: 24, fontWeight: '800' },
@@ -362,7 +376,7 @@ const styles = StyleSheet.create({
   // WARNING BOX
   warningBox: {
     flexDirection: 'row',
-    backgroundColor: '#FFEBEE',
+    backgroundColor: '#F8D7DA',
     marginHorizontal: 15,
     marginTop: 10,
     borderRadius: 10,
@@ -380,7 +394,7 @@ const styles = StyleSheet.create({
   warningSubText: { color: '#A52A2A', fontSize: 13, marginTop: 4 },
 
   // ATTENDANCE SECTION
-  attendanceSection: { marginTop: 5, paddingHorizontal: 15 },
+  attendanceSection: { marginTop: 15, paddingHorizontal: 15 },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
@@ -420,12 +434,12 @@ const styles = StyleSheet.create({
     marginBottom: 10, // Tạo khoảng cách với cạnh dưới màn hình
   },
   endTripButton: {
-    backgroundColor: '#42a982', // Màu xanh dương đồng bộ với Dashboard
+    backgroundColor: '#207584', // Màu xanh dương đồng bộ với Dashboard
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 30,
-    borderRadius: 10, // Bo tròn cạnh (Capsule style)
+    borderRadius: 30, // Bo tròn cạnh (Capsule style)
     elevation: 5,
     shadowColor: '#42a96d',
     shadowOffset: { width: 0, height: 4 },
