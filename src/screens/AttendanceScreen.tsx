@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius: 50, // Bo tròn cạnh (Capsule style)
     elevation: 5,
-    shadowColor: '#42a96d',
+    shadowColor: '#207584',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 6,

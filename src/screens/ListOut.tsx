@@ -103,7 +103,7 @@ const renderItem = ({ item }: { item: User }) => (
               <MaterialCommunityIcons name="magnify" color="#999" size={22} />
               <TextInput
                 style={styles.input}
-                placeholder="Tim kiem hoc sinh..."
+                placeholder="Tìm kiếm học sinh..."
                 value={searchText}
                 onChangeText={setSearchText}
                 placeholderTextColor="#999"
@@ -123,16 +123,16 @@ const renderItem = ({ item }: { item: User }) => (
           {/* CONTENT */}
           {loading ? (
             <View style={styles.center}>
-              <ActivityIndicator size="large" color="#A94442" />
-              <Text style={styles.centerText}>Dang tai du lieu...</Text>
+              <ActivityIndicator size="large" color="#207584" />
+              <Text style={styles.centerText}>Đang tải dữ liệu...</Text>
             </View>
           ) : filteredData.length === 0 ? (
             <View style={styles.center}>
               <MaterialCommunityIcons name="bus-clock" size={52} color="#ddd" />
               <Text style={styles.centerText}>
                 {searchText
-                  ? 'Khong tim thay ket qua'
-                  : 'Khong co hoc sinh tren xe'}
+                  ? 'Không tìm thấy kết quả'
+                  : 'Không có học sinh trên xe'}
               </Text>
             </View>
           ) : (
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1.5,
-    borderColor: '#842029',
+    borderColor: '#F8D7DA',
   },
   avatarText: { fontWeight: 'bold', fontSize: 16, color: '#842029' },
 

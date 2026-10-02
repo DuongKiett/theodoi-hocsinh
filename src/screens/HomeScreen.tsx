@@ -69,6 +69,7 @@ const HomeScreen: React.FC = () => {
       if (data) {
         const list: CheckIn[] = Object.entries(data)
           .map(([key, val]: any) => ({
+            key: key,
             id: val.id,
             name: val.name,
             status: val.status,
@@ -161,7 +162,6 @@ const HomeScreen: React.FC = () => {
         {/* --- DASHBOARD --- */}
         {/* --- DASHBOARD --- */}
         <View style={styles.dashboard}>
-          
           <TouchableOpacity
             activeOpacity={0.8}
             style={[styles.card]}

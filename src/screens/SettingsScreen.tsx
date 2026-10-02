@@ -52,7 +52,7 @@ const SettingsScreen: React.FC = () => {
               <MaterialCommunityIcons
                 name="shield-check"
                 size={12}
-                color="#185FA5"
+                color="#207584"
               />
               <Text style={styles.roleText}>Quản trị viên</Text>
             </View>
@@ -65,7 +65,7 @@ const SettingsScreen: React.FC = () => {
         
         {/* NÚT LOGOUT */}
         <TouchableOpacity style={styles.logoutBtn} onPress={handleLogout}>
-          <MaterialCommunityIcons name="logout" size={20} color="#E24B4A" />
+          <MaterialCommunityIcons name="logout" size={20} color="#207584" />
           <Text style={styles.logoutText}>Đăng xuất</Text>
         </TouchableOpacity>
 
@@ -108,16 +108,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 14,
   },
-  avatarText: { fontSize: 20, fontWeight: 'bold', color: '#185FA5' },
+  avatarText: { fontSize: 20, fontWeight: 'bold', color: '#207584' },
   profileInfo: { flex: 1 },
-  profileName: { fontSize: 18, fontWeight: 'bold', color: '#212121' },
+  profileName: { fontSize: 18, fontWeight: 'bold', color: '#207584' },
   roleBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
     marginTop: 4,
   },
-  roleText: { fontSize: 12, color: '#185FA5', fontWeight: '500' },
+  roleText: { fontSize: 12, color: '#207584', fontWeight: '500' },
   sectionTitle: {
     fontSize: 11,
     fontWeight: '600',
@@ -168,10 +168,10 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     backgroundColor: '#fff',
     borderWidth: 1.5,
-    borderColor: '#E24B4A',
+    borderColor: '#207584',
     elevation: 1,
   },
-  logoutText: { color: '#E24B4A', fontWeight: 'bold', fontSize: 16 },
+  logoutText: { color: '#207584', fontWeight: 'bold', fontSize: 16 },
   version: {
     textAlign: 'center',
     color: '#ccc',
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 10,
     alignItems: 'center',
-    backgroundColor: '#A94442',
+    backgroundColor: '#207584',
   },
   modalConfirmText: { fontSize: 15, color: '#fff', fontWeight: 'bold' },
 });
